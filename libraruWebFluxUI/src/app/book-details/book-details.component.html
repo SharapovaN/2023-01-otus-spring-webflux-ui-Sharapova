@@ -1,0 +1,22 @@
+<h2>Book Details</h2>
+<hr/>
+<div *ngIf="book">
+  <div>
+    <label><b>Book Id: </b></label> {{book.id}}
+  </div>
+  <div>
+    <label><b>Book Name: </b></label> {{book.name}}
+  </div>
+  <div>
+    <label><b>Author Name: </b></label> {{book.author}}
+  </div>
+  <div>
+    <label><b>Genre Name: </b></label> {{book.genre}}
+  </div>
+  <div>
+    <label><b>Book Comments: </b></label> {{book.comments}}
+  </div>
+  <br>
+  <button (click)="bookUpdate(book.id)" class='btn btn-primary'>Update book</button>
+</div>
+

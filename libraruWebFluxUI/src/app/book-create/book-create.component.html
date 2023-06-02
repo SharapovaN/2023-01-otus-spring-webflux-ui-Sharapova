@@ -1,0 +1,34 @@
+<div class="card my-5">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #bookForm="ngForm">
+      <div class="form-group">
+        <label for="name">Book name</label>
+        <input type="text" [(ngModel)]="bookSave.name" class="form-control" id="name" name="name"
+               placeholder="Enter book name" required #name="ngModel">
+      </div>
+      <div class="form-group">
+        <label>Author name</label>
+        <ul class="list">
+          <select class="form-control" style="width: 300px; margin-left: -40px;" (change)="onSelectAuthor($any($event).target.value)">
+            <option value="0">--Authors--</option>
+            <option *ngFor="let author of authors; let i = index" [value]="i">
+              {{authors[i].name}} {{authors[i].surname}}
+            </option>
+          </select>
+        </ul>
+      </div>
+      <div class="form-group">
+        <label>Genre name</label>
+        <ul>
+          <select class="form-control" style="width: 300px; margin-left: -40px;" (change)="onSelectGenre($any($event).target.value)">
+            <option value="0">--Genres--</option>
+            <option *ngFor="let genre of genres; let i = index" [value]="i">
+              {{genres[i].name}}
+            </option>
+          </select>
+        </ul>
+      </div>
+      <button type="submit" class="btn btn-success">Create</button>
+    </form>
+  </div>
+</div>
